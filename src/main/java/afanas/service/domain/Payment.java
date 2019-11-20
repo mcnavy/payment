@@ -1,19 +1,30 @@
 package afanas.service.domain;
 
-import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "payment")
 @ToString(of = {"id","text"})
-@EqualsAndHashCode(of = {"id"})
+
 public class Payment {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column (name = "status")
     private String status;
+    @Column (name = "orderID")
+    private int orderID;
+
+    public Payment () {
+
+    }
+
+    public Payment(int orderID, String status) {
+        this.orderID = orderID;
+        this.status = status;
+    }
 
     public String getStatus() {
         return status;
@@ -30,4 +41,8 @@ public class Payment {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public int getOrderID() { return orderID; }
+
+    public void setOrderID(int orderID) { this.orderID = orderID; }
 }
