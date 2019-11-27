@@ -14,7 +14,7 @@ public class Payment {
     private Long id;
     @Column (name = "status")
     private String status;
-    @Column (name = "orderID")
+    @Column (name = "orderid")
     private int orderID;
 
     public Payment () {
