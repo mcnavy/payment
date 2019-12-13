@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfiguration {
 
+
     @Bean
     public DirectExchange directExchange() {
         return new DirectExchange("directExchange");
@@ -17,7 +18,7 @@ public class RabbitConfiguration {
 
     @Bean
     public Queue queue() {
-        return  new Queue("qpayment");
+        return  new Queue("hello");
     }
 
     @Bean
